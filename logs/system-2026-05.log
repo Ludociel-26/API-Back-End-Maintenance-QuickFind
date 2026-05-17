@@ -1,0 +1,68 @@
+2026-05-15 21:42:09 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-15 21:43:40 [WARN]: Intento de acceso con token inválido: invalid signature
+2026-05-15 21:47:48 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-15 21:47:57 [ERROR]: Error guardando inspección: invalid input syntax for type uuid: "3"
+2026-05-15 21:50:52 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-15 21:51:44 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-15 21:52:41 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-15 21:53:07 [ERROR]: Error guardando inspección: insert or update on table "inspections" violates foreign key constraint "inspections_userId_fkey"
+2026-05-15 21:55:11 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-15 21:55:40 [ERROR]: Error guardando inspección: insert or update on table "inspections" violates foreign key constraint "inspections_userId_fkey"
+2026-05-16 15:23:53 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 15:24:25 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 15:25:07 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 15:39:28 [ERROR]: Error guardando inspección: insert or update on table "inspections" violates foreign key constraint "inspections_userId_fkey"
+2026-05-16 15:48:11 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 15:48:13 [ERROR]: Error guardando inspección: insert or update on table "inspections" violates foreign key constraint "inspections_userId_fkey"
+2026-05-16 15:54:09 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 16:02:11 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 16:07:19 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 16:08:45 [INFO]: Inspección 9aaa71aa-6026-46b4-9dbb-cc1336662ee7 creada por usuario 3
+2026-05-16 17:08:03 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:10:34 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:11:49 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:20:10 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:20:26 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:20:47 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:21:07 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:24:42 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:25:11 [INFO]: Inspección 1def7bf3-b5fe-41a4-94cf-e8a7cf016fd6 creada por usuario 3
+2026-05-16 17:31:18 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:31:21 [INFO]: Inspección 0b93c2d3-415f-4f9f-acac-49664dc1e572 creada por usuario 3
+2026-05-16 17:35:47 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:35:59 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:37:10 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:37:33 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:47:13 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:53:06 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:56:48 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:56:58 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:57:09 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:57:36 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:58:21 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 17:59:10 [INFO]: Inspección a27d1bfe-727c-4af3-b06f-9cbd4208befd creada por usuario 3
+2026-05-16 18:00:58 [INFO]: Inspección ee235386-f3fb-4e8d-adb4-358a1b09f215 creada por usuario 3
+2026-05-16 18:14:32 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 18:35:10 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 19:02:47 [ERROR]: Error iniciando servidor: column "password" of relation "Users" contains null values
+2026-05-16 19:02:54 [ERROR]: Error iniciando servidor: column "password" of relation "Users" contains null values
+2026-05-16 19:03:42 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 19:06:04 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 19:11:19 [INFO]: Inspección 8ecd0884-e52c-4a8a-bebb-44b20d460417 creada por usuario 3
+2026-05-16 22:31:54 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 22:34:41 [WARN]: Intento de brecha: Usuario 3 (Rol 1) intentó acceder a Mantenimiento.
+2026-05-16 22:34:49 [WARN]: Intento de brecha: Usuario 3 (Rol 1) intentó acceder a Mantenimiento.
+2026-05-16 22:58:12 [ERROR]: Error de autenticación JWT: jwt malformed
+2026-05-16 22:59:36 [ERROR]: Error de autenticación JWT: jwt malformed
+2026-05-16 23:04:41 [ERROR]: Error de autenticación JWT: jwt malformed
+2026-05-16 23:25:14 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-16 23:25:43 [INFO]: Inspección 8f966a4e-46ea-4f10-87e7-72fbbd3ae75b creada por usuario 3
+2026-05-16 23:28:42 [INFO]: Inspección da18a1e8-95e4-424d-a0fe-3e5399c3dafd creada por usuario 3
+2026-05-17 08:41:18 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-17 08:59:25 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-17 08:59:39 [INFO]: Inspección d38b7957-e678-450c-8087-2d914857b9e7 creada por usuario 3
+2026-05-17 09:39:22 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-17 09:39:55 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-17 09:40:29 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-17 09:41:15 [INFO]: 🚀 Maintenance Server started on PORT:4001
+2026-05-17 10:28:15 [INFO]: 🚀 Maintenance Server started on PORT:4001
