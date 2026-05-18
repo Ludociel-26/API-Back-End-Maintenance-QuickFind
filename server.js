@@ -9,6 +9,8 @@ import bodyParser from 'body-parser';
 import connectDB, { sequelize } from './config/postgresdb.js';
 import logger from './logger.js';
 import inspectionRoutes from './routes/inspectionRoutes.js';
+import documentRoutes from './routes/documentRoutes.js'; // 🚩 1. Importa la nueva ruta
+import chemicalAnalysisRoutes from './routes/chemicalAnalysisRoutes.js';
 
 const app = express();
 const port = process.env.PORT || 4001;
@@ -49,6 +51,8 @@ app.use(limiter);
 // 🚩 Rutas de la API de Mantenimiento
 app.get('/api/health', (req, res) => res.send('Maintenance API Running OK'));
 app.use('/api/inspections', inspectionRoutes);
+app.use('/api', documentRoutes); // 🚩 2. Expone el endpoint al frontend
+app.use('/api/chemical-analysis', chemicalAnalysisRoutes);
 
 // Manejo de errores JSON
 app.use((err, req, res, next) => {
