@@ -4,7 +4,6 @@ import logger from '../logger.js';
 // GET: Obtener las configuraciones de todas las áreas
 export const getAllConfigs = async (req, res) => {
   try {
-    // 🛡️ PATRÓN SELF-HEALING ROBUSTO: Definimos todas las plantillas maestras obligatorias
     const defaultConfigs = [
       {
         area_key: 'ref',
@@ -28,7 +27,6 @@ export const getAllConfigs = async (req, res) => {
         estandar_calidad: 'Mantenimiento Preventivo',
         razon_cambio: 'Cambio de aprobador, propietario y logo',
       },
-      // 🚩 NUEVA PLANTILLA: Análisis Químicos (Datos extraídos de tu foto real)
       {
         area_key: 'analisis_quimicos_vapor',
         codigo_documento: '2.2-16-3-6',
@@ -36,27 +34,73 @@ export const getAllConfigs = async (req, res) => {
         fecha_revision: 'Mayo/29/25',
         fecha_reemplazo: 'Mayo/15/24',
         propietario: 'Fernando Gaxiola',
-        aprobador: 'Gabriel Gonzalez', // Sin acento, tal como en tu documento
-        estandar_calidad: 'Mantenimiento Preventivo', // Asumido por el estándar de Mantenimiento
+        aprobador: 'Gabriel Gonzalez',
+        estandar_calidad: 'Mantenimiento Preventivo',
         razon_cambio:
-          'Cambio de Aprobador y de propietario, Se eliminan de esta bitácora los registros de sulfitos, Cont. Neutralizada, alcalinidad y trasar.',
+          'Cambio de Aprobador y propietario. Se eliminan registros de sulfitos.',
+      },
+      {
+        area_key: 'reportes_diarios_congelados',
+        codigo_documento: '2.2-16-3-11',
+        version: '3.0',
+        fecha_revision: 'Febrero/23/2026',
+        fecha_reemplazo: 'Agosto/29/25',
+        propietario: 'Fernando Gaxiola',
+        aprobador: 'Gabriel Gonzalez',
+        estandar_calidad: 'Mantenimiento Preventivo',
+        razon_cambio:
+          'Se eliminó suavizador. Se agregó torre PROTEC, detección/fugas de amoniaco.',
+      },
+      {
+        area_key: 'central_vapor_bitacora',
+        codigo_documento: '2.2-16-3-7',
+        version: '4.0',
+        fecha_revision: 'Abril/18/2024',
+        fecha_reemplazo: 'Enero/25/2025',
+        propietario: 'Fernando Gaxiola',
+        aprobador: 'Gabriel Gonzalez',
+        estandar_calidad: 'Mantenimiento Preventivo',
+        razon_cambio:
+          'Revisión de nivel de combustóleo principal y rangos de operación.',
+      },
+      {
+        area_key: 'bitacora_compresor_aire',
+        codigo_documento: '2.2-16-3-8',
+        version: '3.0',
+        fecha_revision: 'Mayo/15/24',
+        fecha_reemplazo: 'Mayo/11/22',
+        propietario: 'Fernando Gaxiola',
+        aprobador: 'Gabriel Gonzalez',
+        estandar_calidad: 'Mantenimiento Preventivo',
+        razon_cambio: 'Actualización de formato de bitácora de compresores.',
+      },
+      {
+        area_key: 'bitacora_cuarto_frio_5',
+        codigo_documento: '2.2-16-3-16',
+        version: '3.0',
+        fecha_revision: 'Abril/25/24',
+        fecha_reemplazo: 'Mayo/12/22',
+        propietario: 'Jonathan Serrato',
+        aprobador: 'Gabriel Gonzalez',
+        estandar_calidad: 'Mantenimiento Preventivo',
+        razon_cambio: 'Cambio de Aprobador y propietario',
       },
     ];
 
-    // Recorremos las configuraciones maestras y las inyectamos si no existen
+    // 🚩 SOLUCIÓN ENTERPRISE: Bypasseamos el findOrCreate para evitar el bug de Sequelize
     for (const conf of defaultConfigs) {
-      await DocumentConfig.findOrCreate({
-        where: { area_key: conf.area_key },
-        defaults: conf,
-      });
+      const existingConfig = await DocumentConfig.findByPk(conf.area_key);
+
+      // Si no existe, lo creamos directamente. Silencio absoluto en consola.
+      if (!existingConfig) {
+        await DocumentConfig.create(conf);
+      }
     }
 
-    // Leemos todos los registros ya con la certeza de que los 3 formatos existen
     const configs = await DocumentConfig.findAll();
-
     return res.status(200).json({ success: true, data: configs });
   } catch (error) {
-    logger.error(`Error obteniendo configuraciones ISO: ${error.message}`);
+    logger.error(`[ERROR] Controller: getAllConfigs failed - ${error.message}`);
     return res.status(500).json({
       success: false,
       message: 'Error al obtener configuraciones de calidad.',
@@ -79,15 +123,13 @@ export const updateConfig = async (req, res) => {
     }
 
     await config.update(configData);
-
-    logger.info(`Cambio Normativo ISO aprobado para el área: ${area_key}`);
     return res.status(200).json({
       success: true,
       message: 'Formato actualizado exitosamente.',
       data: config,
     });
   } catch (error) {
-    logger.error(`Error actualizando configuración ISO: ${error.message}`);
+    logger.error(`[ERROR] Controller: updateConfig failed - ${error.message}`);
     return res.status(500).json({
       success: false,
       message: 'Error interno al guardar los cambios en la BD.',
